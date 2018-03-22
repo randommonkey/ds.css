@@ -1,0 +1,25 @@
+html {
+  @include box-sizing(border-box);
+}
+
+*,
+*:before,
+*:after {
+  @include box-sizing(inherit);
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+  @include flexbox(column);
+  @include flex-wrap(nowrap);
+}

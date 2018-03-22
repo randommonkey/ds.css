@@ -1,17 +1,5 @@
-html {
-  box-sizing: border-box;
-}
+@import 'mixins/utils';
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+@import 'base/reset';
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
+@import 'components/align';

@@ -1,0 +1,42 @@
+// Direction
+.line           { @include flexbox(); }
+.column         { @include flexbox(column); }
+.line.reverse   { @include flexbox(row-reverse); }
+.column.reverse { @include flexbox(column-reverse); }
+
+// Center
+.line.h-centered,
+.column.v-centered {
+  @include justify-content(center);
+}
+.line.v-centered,
+.column.h-centered {
+  @include align-items(center);
+}
+.centered {
+  @include centered;
+}
+
+// Justify content
+.justify-around   { @include justify-content(space-around); }
+.justify-between  { @include justify-content(space-between); }
+.justify-end      { @include justify-content(flex-end); }
+.justify-evenly   { @include justify-content(space-evenly); }
+.justify-start    { @include justify-content(flex-start); }
+
+// Align items
+.align-start  { @include align-items(flex-start); }
+.align-end    { @include align-items(flex-end); }
+
+// Flex wrap
+.wrap         { @include flex-wrap(); }
+.nowrap       { @include flex-wrap(nowrap); }
+.wrap-reverse { @include flex-wrap(wrap-reverse); }
+
+// Align self
+.item-center  { @include align-self(center); }
+.item-start   { @include align-self(flex-start); }
+.item-end     { @include align-self(flex-end);}
+
+// Flex
+.fill { @include flex(1, 0, auto); }
