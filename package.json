@@ -1,0 +1,32 @@
+{
+  "name": "ds.css",
+  "version": "1.0.0",
+  "description": "CSS for Datasketch specials",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "dev": "npm run build && gulp watch"
+  },
+  "keywords": [
+    "css",
+    "datasketch"
+  ],
+  "author": "David Daza <03dazal@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^3.1.0",
+    "pump": "^3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
