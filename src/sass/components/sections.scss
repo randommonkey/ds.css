@@ -1,0 +1,15 @@
+.full-section {
+  @include section(100vh);
+}
+
+.half-quarter-section {
+  @include section(75vh);
+}
+
+.half-section {
+  @include section(50vh);
+}
+
+.quarter-section {
+  @include section(25vh);
+}

@@ -1,0 +1,29 @@
+@mixin flexbox($direction: row) {
+	display: flex;
+  flex-direction: $direction;
+}
+
+@mixin flex-wrap($mode: wrap) {
+  flex-wrap: $mode;
+}
+
+@mixin justify-content($position: flex-start) {
+  justify-content: $position;
+}
+
+@mixin align-items($position: stretch) {
+  align-items: $position;
+}
+
+@mixin centered {
+  @include justify-content(center);
+  @include align-items(center);
+}
+
+@mixin align-self($position: auto) {
+  align-self: $position;
+}
+
+@mixin flex($fg, $fs, $fb) {
+  flex: $fg $fs $fb;
+}

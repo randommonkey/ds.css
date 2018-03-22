@@ -1,5 +1,18 @@
+@import 'vars';
+
+@import 'mixins/responsive';
+@import 'mixins/align';
+@import 'mixins/sections';
 @import 'mixins/utils';
 
 @import 'base/reset';
 
 @import 'components/align';
+@import 'components/sections';
+
+.text-center {
+  @include text-align(center)
+}
+.text-right {
+  @include text-align(right)
+}
