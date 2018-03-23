@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grid</title>
+  <link rel="stylesheet" href="../dist/ds.css">
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .grid {
+      height: 30px;
+    }
+    .space {
+      padding: 5px;
+    }
+    div[class^="col-"] {
+      padding: 0 10px;
+    }
+    .grid div[class^="col-"]:nth-child(1) {
+      background: #D81B60;
+      color: white;
+    }
+    .grid div[class^="col-"]:nth-child(2n) {
+      background: #EEEEEE;
+      color: #616161;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="col-12 column v-centered">12</div>
+  </div>
+  <div class="space"></div>
+  <div class="grid">
+    <div class="col-11 column v-centered">11</div>
+    <div class="col-1 column v-centered">1</div>
+  </div>
+  <div class="space"></div>
+  <div class="grid">
+    <div class="col-10 column v-centered">10</div>
+    <div class="col-2 column v-centered">2</div>
+  </div>
+  <div class="space"></div>
+  <div class="grid">
+    <div class="col-9 column v-centered">9</div>
+    <div class="col-3 column v-centered">3</div>
+  </div>
+  <div class="space"></div>
+  <div class="grid">
+    <div class="col-8 column v-centered">8</div>
+    <div class="col-4 column v-centered">4</div>
+  </div>
+  <div class="space"></div>
+  <div class="grid">
+    <div class="col-7 column v-centered">7</div>
+    <div class="col-5 column v-centered">5</div>
+  </div>
+  <div class="space"></div>
+  <div class="grid">
+    <div class="col-6 column v-centered">6</div>
+    <div class="col-6 column v-centered">6</div>
+  </div>
+</body>
+</html>

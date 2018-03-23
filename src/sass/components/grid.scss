@@ -4,11 +4,19 @@
 }
 
 @mixin columns($col) {
-  width: $col * 100% / 12;
+  width: $col * 100% / $columns;
 }
 
-@for $col from 1 through 12 {
+@for $col from 1 through $columns {
   .col-#{$col} {
     @include columns($col);
+  }
+}
+
+@include device-size(phone) {
+  @for $col from 1 through $columns {
+    .col-#{$col} {
+      width: 100%;
+    }
   }
 }
