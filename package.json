@@ -4,8 +4,8 @@
   "description": "CSS for Datasketch specials",
   "main": "index.js",
   "scripts": {
-    "build": "gulp",
-    "dev": "npm run build && gulp watch"
+    "build": "cross-env NODE_ENV=production gulp",
+    "dev": "cross-env NODE_ENV=development npm run build && gulp watch"
   },
   "keywords": [
     "css",
@@ -14,6 +14,7 @@
   "author": "David Daza <03dazal@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.9.0",

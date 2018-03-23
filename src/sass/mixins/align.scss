@@ -3,6 +3,10 @@
   flex-direction: $direction;
 }
 
+@mixin flex-direction($direction) {
+  flex-direction: $direction;
+}
+
 @mixin flex-wrap($mode: wrap) {
   flex-wrap: $mode;
 }

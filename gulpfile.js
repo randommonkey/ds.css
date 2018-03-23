@@ -7,7 +7,7 @@ gulp.task('sass', function (cb) {
   pump([
     gulp.src('./src/sass/ds.scss'),
     sass({
-      outputStyle: 'compressed'
+      outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded'
     }),
     autoprefixer(),
     gulp.dest('./dist/')

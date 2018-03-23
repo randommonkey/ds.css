@@ -1,11 +1,16 @@
 @mixin device-size($size) {
-  @if $size == small {
-    @media only screen and (min-width: $sm-viewport) {
+  @if $size == phone {
+    @media only screen and (max-width: $sm-viewport - 1) {
+      @content;
+    }
+  }
+  @else if $size == small {
+    @media only screen and (min-width: $sm-viewport) and (max-width: $md-viewport - 1) {
       @content;
     }
   }
   @else if $size == medium {
-    @media only screen and (min-width: $md-viewport) {
+    @media only screen and (min-width: $md-viewport) and (max-width: $lg-viewport - 1) {
       @content;
     }
   }

@@ -1,0 +1,14 @@
+.grid {
+  @include flexbox();
+  @include flex-wrap(wrap);
+}
+
+@mixin columns($col) {
+  width: $col * 100% / 12;
+}
+
+@for $col from 1 through 12 {
+  .col-#{$col} {
+    @include columns($col);
+  }
+}

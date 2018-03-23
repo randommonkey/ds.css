@@ -5,14 +5,8 @@
 @import 'mixins/sections';
 @import 'mixins/utils';
 
-@import 'base/reset';
+@import 'base/base';
 
 @import 'components/align';
 @import 'components/sections';
-
-.text-center {
-  @include text-align(center)
-}
-.text-right {
-  @include text-align(right)
-}
+@import 'components/grid';

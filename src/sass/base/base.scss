@@ -23,3 +23,10 @@ body {
   @include flexbox(column);
   @include flex-wrap(nowrap);
 }
+
+.text-center {
+  @include text-align(center)
+}
+.text-right {
+  @include text-align(right)
+}
