@@ -242,13 +242,14 @@ class Box {
   }
   /**
    * Get and apply background color from the classes, if any
+   * @param {*} node - a HTML node
    * @param {string} classes
    */
-  mapBgColor(classes) {
+  mapBgColor(node, classes) {
     const bgRegex = /bg_\w*/
     if (classes.match(bgRegex)) {
       const color = classes.match(bgRegex)[0].split('_').pop()
-      this.setStyles(this.node, { 'background-color': `#${color}` })
+      this.setStyles(node, { 'background-color': `#${color}` })
     }
   }
   /**
@@ -292,7 +293,7 @@ class Box {
     
     this.resetAttr(this.node)
     this.node.classList.add('boxes')
-    this.mapBgColor(classes)
+    this.mapBgColor(this.node, classes)
 
     const minWidth = this.mapMinWidth(classes)
     const gap = this.mapGap(classes)
@@ -301,9 +302,10 @@ class Box {
     // Important: children should be written as h2 selectors in Rmd file
     const boxItems = Array.from(this.node.querySelectorAll('.level2'))
     boxItems.forEach(boxItem => {
-      this.mapBgColor(boxItem.getAttribute('class'))
+      this.mapBgColor(boxItem, boxItem.getAttribute('class'))
       this.resetAttr(boxItem)
       this.addToClassList(boxItem, 'box', 'column', 'centered')
+      this.setStyles(boxItem, { 'min-height': `${minWidth}px` })
       const image = boxItem.querySelector('img')
       if (image) {
         image.remove()
