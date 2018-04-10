@@ -4,8 +4,9 @@
   "description": "CSS for Datasketch specials",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production gulp",
-    "dev": "cross-env NODE_ENV=development npm run build && gulp watch"
+    "build": "npm run doc && cross-env NODE_ENV=production gulp",
+    "dev": "cross-env NODE_ENV=development npm run build && gulp watch",
+    "doc": "jsdoc -c ./conf.json"
   },
   "keywords": [
     "css",

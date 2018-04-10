@@ -1,0 +1,8 @@
+{
+  "source": {
+    "include": ["./src/js/ds.js"]
+  },
+  "opts": {
+    "destination": "./docs/"
+  }
+}
