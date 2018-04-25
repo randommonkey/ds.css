@@ -15,9 +15,10 @@ module.exports = merge(common, {
             {
               loader: 'css-loader',
               options: {
-                importLoaders: 1
+                importLoaders: 2
               }
             },
+            'postcss-loader',
             {
               loader: 'sass-loader',
               options: {
