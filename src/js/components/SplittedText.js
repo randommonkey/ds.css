@@ -4,20 +4,20 @@ export default class SplittedText {
    * Create a SplittedText object
    * @param {*} node - a HTML node
    */
-  constructor(node) {
+  constructor (node) {
     this.node = node
   }
   /**
    * Reset class and id attributes
    */
-  resetAttr() {
+  resetAttr () {
     this.node.removeAttribute('id')
     this.node.removeAttribute('class')
   }
   /**
    * Build DOM structure for splitted text component
    */
-  buildDOM() {
+  buildDOM () {
     this.node.removeChild(this.node.querySelector('h1'))
     const classes = this.node.getAttribute('class')
     this.resetAttr()

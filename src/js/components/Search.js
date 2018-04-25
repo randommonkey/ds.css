@@ -5,14 +5,14 @@ class Search {
    * Create a Search object
    * @param {*} node - a HTML node
    */
-  constructor(node) {
+  constructor (node) {
     this.node = node
   }
   /**
    * Reset class and id attributes
    * @param {*} node - a HTML node
    */
-  resetAttr(node) {
+  resetAttr (node) {
     node.removeAttribute('id')
     node.removeAttribute('class')
   }
@@ -21,7 +21,7 @@ class Search {
    * @param {*} node - a HTML node
    * @param {object} attrs - Object with attribute name and attribute value
    */
-  setAttr(node, attrs) {
+  setAttr (node, attrs) {
     const keys = Object.keys(attrs)
     keys.forEach(key => node.setAttribute(key, attrs[key]))
   }
@@ -31,13 +31,13 @@ class Search {
    * @param {string} property - CSS property name
    * @param {string} value - CSS property value
    */
-  css(node, property, value) {
+  css (node, property, value) {
     node.style[property] = value
   }
   /**
    * Build DOM structure for banner component
    */
-  buildDOM() {
+  buildDOM () {
     this.node.removeChild(this.node.querySelector('h1'))
     this.resetAttr(this.node)
     this.node.classList.add('search')
@@ -52,9 +52,9 @@ class Search {
     input.addEventListener('keyup', (event) => {
       const filter = event.target.value.toLowerCase()
       items.forEach(item => {
-        item.textContent.toLowerCase().includes(filter) ?
-          this.css(item, 'display', 'list-item') :
-          this.css(item, 'display', 'none')
+        item.textContent.toLowerCase().includes(filter)
+          ? this.css(item, 'display', 'list-item')
+          : this.css(item, 'display', 'none')
       })
     })
   }

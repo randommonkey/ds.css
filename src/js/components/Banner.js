@@ -4,14 +4,14 @@ export default class Banner {
    * Create a Banner object
    * @param {*} node - a HTML node
    */
-  constructor(node) {
+  constructor (node) {
     this.node = node
   }
   /**
    * Reset class and id attributes
    * @param {*} node - a HTML node
    */
-  resetAttr(node) {
+  resetAttr (node) {
     node.removeAttribute('id')
     node.removeAttribute('class')
   }
@@ -20,7 +20,8 @@ export default class Banner {
    * @param {string} txt - A text like HTML
    * @returns {} Text parsed into HTML
    */
-  textToDOM(txt) {
+  textToDOM (txt) {
+    /* eslint no-undef: off */
     const parser = new DOMParser()
     const document = parser.parseFromString(txt, 'text/html')
     return document.body.innerHTML
@@ -29,7 +30,7 @@ export default class Banner {
    * Get and apply background color from the classes, if any
    * @param {string} classes
    */
-  mapBgColor(classes) {
+  mapBgColor (classes) {
     const bgRegex = /bg_\w*/
     if (classes.match(bgRegex)) {
       const color = classes.match(bgRegex)[0].split('_').pop()
@@ -40,7 +41,7 @@ export default class Banner {
    * Get and apply banner size from the clasess, if any
    * @param {string} classes
    */
-  mapBannerSize(classes) {
+  mapBannerSize (classes) {
     const sizeRegex = /size_\w*/
     if (classes.match(sizeRegex)) {
       const size = classes.match(sizeRegex)[0].split('_').pop()
@@ -52,7 +53,7 @@ export default class Banner {
    * @param {string} property - CSS property name
    * @param {string} value - CSS property value
    */
-  css(property, value) {
+  css (property, value) {
     this.node.style[property] = value
   }
   /**
@@ -60,13 +61,13 @@ export default class Banner {
    * @param {*} node
    * @param {string} classes
    */
-  addToClassList(node, ...classes) {
+  addToClassList (node, ...classes) {
     classes.forEach(c => node.classList.add(c))
   }
   /**
    * Build DOM structure for banner component
    */
-  buildDOM() {
+  buildDOM () {
     this.node.removeChild(this.node.querySelector('h1'))
     const classes = this.node.getAttribute('class')
     this.resetAttr(this.node)

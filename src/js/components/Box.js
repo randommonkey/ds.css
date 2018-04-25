@@ -4,32 +4,34 @@ export default class Box {
    * Create a Box object
    * @param {*} node - a HTML node
    */
-  constructor(node) {
+  constructor (node) {
     this.node = node
   }
   /**
    * Reset class and id attributes
    * @param {*} node - a HTML node
    */
-  resetAttr(node) {
+  resetAttr (node) {
     node.removeAttribute('id')
     node.removeAttribute('class')
   }
   /**
    * Add styles to root node
    * @param {*} node - a HTML node
-   * @param {Object} styles 
+   * @param {Object} styles
    */
-  setStyles(node, styles) {
+  setStyles (node, styles) {
     const keys = Object.keys(styles)
-    keys.forEach(key => node.style[key] = styles[key])
+    keys.forEach(key => {
+      node.style[key] = styles[key]
+    })
   }
   /**
    * Get and apply background color from the classes, if any
    * @param {*} node - a HTML node
    * @param {string} classes
    */
-  mapBgColor(node, classes) {
+  mapBgColor (node, classes) {
     const bgRegex = /bg_\w*/
     if (classes.match(bgRegex)) {
       const color = classes.match(bgRegex)[0].split('_').pop()
@@ -41,7 +43,7 @@ export default class Box {
    * @param {string} classes
    * @returns {number} minimum width
    */
-  mapMinWidth(classes) {
+  mapMinWidth (classes) {
     const mwRegex = /(minwidth|mw)_\w*/
     if (classes.match(mwRegex)) {
       return parseInt(classes.match(mwRegex)[0].split('_').pop(), 10)
@@ -65,23 +67,23 @@ export default class Box {
    * @param {*} node
    * @param {string} classes
    */
-  addToClassList(node, ...classes) {
+  addToClassList (node, ...classes) {
     classes.forEach(c => node.classList.add(c))
   }
   /**
    * Build DOM structure for banner component
    */
-  buildDOM() {
+  buildDOM () {
     this.node.removeChild(this.node.querySelector('h1'))
     const classes = this.node.getAttribute('class')
-    
+
     this.resetAttr(this.node)
     this.node.classList.add('boxes')
     this.mapBgColor(this.node, classes)
 
     const minWidth = this.mapMinWidth(classes)
     const gap = this.mapGap(classes)
-    this.setStyles(this.node, { 'display': 'grid', 'grid-template-columns': `repeat(auto-fit, minmax(${minWidth}px, 1fr))`, 'grid-gap': `${gap}px`})
+    this.setStyles(this.node, { 'display': 'grid', 'grid-template-columns': `repeat(auto-fit, minmax(${minWidth}px, 1fr))`, 'grid-gap': `${gap}px` })
 
     // Important: children should be written as h2 selectors in Rmd file
     const boxItems = Array.from(this.node.querySelectorAll('.level2'))

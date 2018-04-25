@@ -1,7 +1,7 @@
 import '../sass/ds.scss'
 import Banner from '@/components/Banner'
 import Box from '@/components/Box'
-import Search from '@/components/SplittedText'
+import Search from '@/components/Search'
 import SplittedText from '@/components/SplittedText'
 
 const banners = Array.from(document.querySelectorAll('[id^=banner]'))
