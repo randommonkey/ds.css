@@ -1,4 +1,7 @@
-/** Class to manage splitted text components */
+/**
+ * Class to manage splitted text components
+ * @module SplittedText
+ */
 export default class SplittedText {
   /**
    * Create a SplittedText object

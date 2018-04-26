@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: SplittedText.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,54 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: SplittedText.js</h1>
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Class to manage splitted text components
+ * @module SplittedText
+ */
+export default class SplittedText {
+  /**
+   * Create a SplittedText object
+   * @param {*} node - a HTML node
+   */
+  constructor (node) {
+    this.node = node
+  }
+  /**
+   * Reset class and id attributes
+   */
+  resetAttr () {
+    this.node.removeAttribute('id')
+    this.node.removeAttribute('class')
+  }
+  /**
+   * Build DOM structure for splitted text component
+   */
+  buildDOM () {
+    this.node.removeChild(this.node.querySelector('h1'))
+    const classes = this.node.getAttribute('class')
+    this.resetAttr()
+    const posRegexp = /init_\w*/
+    if (classes.match(posRegexp)) {
+      const position = classes.match(posRegexp)[0].split('_').pop()
+      this.node.classList.add(position.toLowerCase())
+    } else {
+      this.node.classList.add('right')
+    }
+    this.node.classList.add('splitted-text')
+  }
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

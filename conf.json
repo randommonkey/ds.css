@@ -1,6 +1,11 @@
 {
   "source": {
-    "include": ["./src/js/ds.js"]
+    "include": [
+      "./src/js/components/Banner.js",
+      "./src/js/components/Box.js",
+      "./src/js/components/Search.js",
+      "./src/js/components/SplittedText.js"
+    ]
   },
   "opts": {
     "destination": "./docs/"
