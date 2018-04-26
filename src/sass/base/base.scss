@@ -24,6 +24,24 @@ body {
   @include flex-wrap(nowrap);
 }
 
+.container {
+  margin: 0 auto;
+  width: 95%;
+}
+.post-container {
+  margin: 10px auto 10px;
+  width: 95%;
+}
+@include device-size(small) {
+  .post-container {
+    width: 60%;
+  }
+}
+@include device-size(medium) {
+  .post-container {
+    width: 50%;
+  }
+}
 .text-center {
   @include text-align(center)
 }
