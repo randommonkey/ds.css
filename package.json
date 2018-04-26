@@ -4,7 +4,7 @@
   "description": "CSS for Datasketch specials",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p --progress --config ./config/webpack.prod.js",
+    "build": "npm run doc && webpack -p --progress --config ./config/webpack.prod.js",
     "dev": "webpack-dev-server --progress --config ./config/webpack.dev.js",
     "doc": "jsdoc -c ./conf.json",
     "start": "npm run dev"
@@ -43,5 +43,8 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "hoek": "^5.0.3"
+  }
 }
