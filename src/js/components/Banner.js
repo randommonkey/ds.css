@@ -37,7 +37,7 @@ export default class Banner {
     const bgRegex = /bg_\w*/
     if (classes.match(bgRegex)) {
       const color = classes.match(bgRegex)[0].split('_').pop()
-      this.css('backgroundColor', `#${color}`)
+      this.css(this.node, 'backgroundColor', `#${color}`)
     }
   }
   /**
@@ -56,8 +56,8 @@ export default class Banner {
    * @param {string} property - CSS property name
    * @param {string} value - CSS property value
    */
-  css (property, value) {
-    this.node.style[property] = value
+  css (node, property, value) {
+    node.style[property] = value
   }
   /**
    * Add classes to a specific node
@@ -66,6 +66,24 @@ export default class Banner {
    */
   addToClassList (node, ...classes) {
     classes.forEach(c => node.classList.add(c))
+  }
+  /**
+   * Build banner inner template
+   */
+  buildContentTemplate (node, title, subtitle, link, image) {
+    // Set image as background, if any
+    if (image) {
+      const src = image.getAttribute('src')
+      this.css(node, 'background', `url(${src}) no-repeat center`)
+      this.css(node, 'backgroundSize', 'cover')
+    }
+    return (
+      `
+        ${title ? `<h1>${title}</h1>` : ''}
+        ${subtitle ? `<h3>${subtitle}</h3>` : ''}
+        ${link ? `${link}` : ''}
+      `
+    )
   }
   /**
    * Build DOM structure for banner component
@@ -88,18 +106,9 @@ export default class Banner {
       const title = this.node.querySelector('.level2').querySelector('h2').textContent
       const subtitle = this.node.querySelector('.level3').querySelector('h3').textContent
       const link = this.node.querySelector('a').outerHTML
-      // Set image as background, if any
       const image = this.node.querySelector('img')
-      if (image) {
-        const src = this.node.querySelector('img').getAttribute('src')
-        this.css('background', `url(${src}) no-repeat center center`)
-        this.css('backgroundSize', 'cover')
-      }
-      const template = `
-        ${title ? `<h1>${title}</h1>` : ''}
-        ${subtitle ? `<h3>${subtitle}</h3>` : ''}
-        ${link ? `${link}` : ''}
-      `
+      const template = this.buildContentTemplate(this.node, title, subtitle, link, image)
+
       this.node.innerHTML = this.textToDOM(template)
     } else if (classes.match(multiRegex)) {
       this.addToClassList(this.node, 'grid')
@@ -107,8 +116,17 @@ export default class Banner {
       Array.from(this.node.querySelectorAll('[class*=col]')).forEach(col => {
         const colsRegex = /col-\w*/
         const column = col.getAttribute('class').match(colsRegex)[0]
+
         this.resetAttr(col)
         this.addToClassList(col, 'column', 'centered', column)
+
+        const title = col.querySelector('h2').textContent
+        const subtitle = col.querySelector('h3').textContent
+        const link = col.querySelector('a').outerHTML
+        const image = col.querySelector('img')
+        const template = this.buildContentTemplate(col, title, subtitle, link, image)
+
+        col.innerHTML = this.textToDOM(template)
       })
     }
   }
