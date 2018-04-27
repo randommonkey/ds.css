@@ -42,7 +42,7 @@ export default class Search {
   buildDOM () {
     this.node.removeChild(this.node.querySelector('h1'))
     this.resetAttr(this.node)
-    this.node.classList.add('search')
+    this.node.classList.add('search', 'container')
 
     const list = this.node.querySelector('ul') || this.node.querySelector('ol')
     const items = Array.from(list.getElementsByTagName('li'))

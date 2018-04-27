@@ -81,7 +81,7 @@ export default class Box {
     const classes = this.node.getAttribute('class')
 
     this.resetAttr(this.node)
-    this.node.classList.add('boxes')
+    this.node.classList.add('boxes', 'container')
     this.mapBgColor(this.node, classes)
 
     const minWidth = this.mapMinWidth(classes)

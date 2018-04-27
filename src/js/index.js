@@ -1,6 +1,7 @@
 import '../sass/ds.scss'
 import Banner from '@/components/Banner'
 import Box from '@/components/Box'
+import Carousel from '@/components/Carousel'
 import Search from '@/components/Search'
 import SplittedText from '@/components/SplittedText'
 import Text from '@/components/Text'
@@ -10,6 +11,9 @@ banners.forEach(banner => new Banner(banner).buildDOM())
 
 const boxes = Array.from(document.querySelectorAll('[id^=boxes]'))
 boxes.forEach(box => new Box(box).buildDOM())
+
+const carousels = Array.from(document.querySelectorAll('[id^=carousel]'))
+carousels.forEach(carousel => new Carousel(carousel).buildDOM())
 
 const searchs = Array.from(document.querySelectorAll('[id^=search]'))
 searchs.forEach(s => new Search(s).buildDOM())

@@ -42,6 +42,11 @@ body {
     width: 50%;
   }
 }
+@include device-size(large) {
+  .post-container {
+    width: 50%;
+  }
+}
 .text-center {
   @include text-align(center)
 }

@@ -31,6 +31,6 @@ export default class SplittedText {
     } else {
       this.node.classList.add('right')
     }
-    this.node.classList.add('splitted-text')
+    this.node.classList.add('splitted-text', 'container')
   }
 }
