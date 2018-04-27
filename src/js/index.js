@@ -2,6 +2,7 @@ import '../sass/ds.scss'
 import Banner from '@/components/Banner'
 import Box from '@/components/Box'
 import Carousel from '@/components/Carousel'
+import Iframe from '@/components/Iframe'
 import Search from '@/components/Search'
 import SplittedText from '@/components/SplittedText'
 import Text from '@/components/Text'
@@ -14,6 +15,9 @@ boxes.forEach(box => new Box(box).buildDOM())
 
 const carousels = Array.from(document.querySelectorAll('[id^=carousel]'))
 carousels.forEach(carousel => new Carousel(carousel).buildDOM())
+
+const iframes = Array.from(document.querySelectorAll('[id^=iframe]'))
+iframes.forEach(iframe => new Iframe(iframe).buildDOM())
 
 const searchs = Array.from(document.querySelectorAll('[id^=search]'))
 searchs.forEach(s => new Search(s).buildDOM())
