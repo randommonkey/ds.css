@@ -17,6 +17,10 @@ body {
   width: 100%;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 #wrapper {
   min-height: 100%;
   position: relative;

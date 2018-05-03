@@ -31,5 +31,6 @@ module.exports = merge(common, {
     port: 8080,
     publicPath: '/dist/',
     stats: 'errors-only'
-  }
+  },
+  devtool: 'inline-source-map'
 })

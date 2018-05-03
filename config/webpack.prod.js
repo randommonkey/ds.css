@@ -3,6 +3,7 @@ const merge = require('webpack-merge')
 const common = require('./webpack.common')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = merge(common, {
   module: {
@@ -34,6 +35,10 @@ module.exports = merge(common, {
     new CleanWebpackPlugin('dist', {
       root: path.resolve(__dirname, '..')
     }),
-    new ExtractTextPlugin('ds.min.css')
-  ]
+    new ExtractTextPlugin('ds.min.css'),
+    new UglifyJSPlugin({
+      sourceMap: true
+    })
+  ],
+  devtool: 'source-map'
 })
