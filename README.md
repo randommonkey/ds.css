@@ -1,5 +1,11 @@
 # ddjrmd
 
+## Download
+
+_CSS_: `https://cdn.jsdeliver.net/gh/randommonkey/ds.css@1.1.0/dist/ds.min.css`
+
+_JS_:
+`https://cdn.jsdeliver.net/gh/randommonkey/ds.css@1.1.0/dist/ds.min.js`
 ## Banners
 
 ### Banner with one column, title, subtitle and link
