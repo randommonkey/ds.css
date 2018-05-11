@@ -30,7 +30,8 @@ module.exports = {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../src/js/'),
-      '~': path.resolve(__dirname, '../node_modules/')
+      '~': path.resolve(__dirname, '../node_modules/'),
+      'Utilities': path.resolve(__dirname, '../src/js/utilities/')
     }
   }
 }

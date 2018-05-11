@@ -8,7 +8,11 @@ import Search from '@/components/Search'
 import SplittedText from '@/components/SplittedText'
 import Text from '@/components/Text'
 
+import Utilities from 'Utilities'
+
 window.onload = function () {
+  Array.from(document.body.getElementsByTagName('*')).forEach(element => new Utilities(element))
+
   const anchors = Array.from(document.querySelectorAll('a'))
 
   anchors.forEach(anchor => {
