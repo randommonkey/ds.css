@@ -5,7 +5,7 @@
 **CSS** (place in head): `https://cdn.jsdelivr.net/gh/randommonkey/ds.css/dist/ds.min.css`
 
 **JS** (place at bottom):
-`https://cdn.jsdelivr.net/gh/randommonkey/ds.css@1.3.0/dist/ds.min.js`
+`https://cdn.jsdelivr.net/gh/randommonkey/ds.css@1.4.0/dist/ds.min.js`
 ## Banners
 
 ### Banner with one column, title, subtitle and link
