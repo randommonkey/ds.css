@@ -8,11 +8,16 @@ import Search from '@/components/Search'
 import SplittedText from '@/components/SplittedText'
 import Text from '@/components/Text'
 
-import Utilities from 'Utilities'
+import { Utilities, fonts } from 'Utilities'
 import overlayHandler from 'Utilities/overlay'
+
+const WebFont = require('webfontloader')
 
 window.onload = function () {
   Array.from(document.body.getElementsByTagName('*')).forEach(element => new Utilities(element))
+
+  // Load fonts
+  WebFont.load({ google: { families: fonts } })
 
   let banners = Array.from(document.querySelectorAll('[id^=banner]'))
   banners = banners.filter(banner => banner.classList.contains('level1'))
