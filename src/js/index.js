@@ -9,39 +9,10 @@ import SplittedText from '@/components/SplittedText'
 import Text from '@/components/Text'
 
 import Utilities from 'Utilities'
+import overlayHandler from 'Utilities/overlay'
 
 window.onload = function () {
   Array.from(document.body.getElementsByTagName('*')).forEach(element => new Utilities(element))
-
-  const anchors = Array.from(document.querySelectorAll('a'))
-
-  anchors.forEach(anchor => {
-    const href = anchor.getAttribute('href')
-    if (href.match(/(overlay_\w*)/)) {
-      anchor.addEventListener('click', event => {
-        event.preventDefault()
-        const id = href.match(/(overlay_\w*)/)[0].split('_').pop()
-        const overlay = document.getElementById(id)
-        document.body.classList.add('no-scroll')
-        const container = document.querySelector('.overlay-container')
-        container.classList.add('above')
-        container.style.top = `${window.scrollY}px`
-        overlay.classList.toggle('overlay-opened')
-      })
-    }
-  })
-
-  const closer = Array.from(document.querySelectorAll('.overlay-close'))
-
-  closer.forEach(close => {
-    close.addEventListener('click', event => {
-      event.preventDefault()
-      document.body.classList.remove('no-scroll')
-      document.querySelector('.overlay-opened').classList.remove('overlay-opened')
-      const container = document.querySelector('.overlay-container')
-      container.classList.remove('above')
-    })
-  })
 
   let banners = Array.from(document.querySelectorAll('[id^=banner]'))
   banners = banners.filter(banner => banner.classList.contains('level1'))
@@ -72,4 +43,6 @@ window.onload = function () {
   let texts = Array.from(document.querySelectorAll('[id^=text]'))
   texts = texts.filter(text => text.classList.contains('level1'))
   texts.forEach(t => new Text(t).buildDOM())
+
+  overlayHandler()
 }
