@@ -47,6 +47,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "deepmerge": "^2.1.0",
     "hoek": "^5.0.3",
     "tiny-slider": "^2.6.0",
     "webfontloader": "^1.6.28"
