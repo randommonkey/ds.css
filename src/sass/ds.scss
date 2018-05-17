@@ -3,6 +3,7 @@
 @import 'mixins/responsive';
 @import 'mixins/align';
 @import 'mixins/sections';
+@import 'mixins/nav';
 @import 'mixins/utils';
 
 @import 'base/base';
@@ -13,6 +14,7 @@
 @import 'components/splitted';
 @import 'components/search';
 @import 'components/overlay';
+@import 'components/nav';
 
 @import '../../node_modules/tiny-slider/src/tiny-slider.scss';
 
