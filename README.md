@@ -2,10 +2,10 @@
 
 ## Download
 
-**CSS** (place in head): `https://cdn.jsdelivr.net/gh/randommonkey/ds.css/dist/ds.min.css`
+**CSS** (place in head): `https://cdn.jsdelivr.net/gh/randommonkey/ds.css/dist/titi.min.css`
 
 **JS** (place at bottom):
-`https://cdn.jsdelivr.net/gh/randommonkey/ds.css@1.4.0/dist/ds.min.js`
+`https://cdn.jsdelivr.net/gh/randommonkey/ds.css@1.4.0/dist/titi.min.js`
 ## Banners
 
 ### Banner with one column, title, subtitle and link
@@ -132,7 +132,7 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ![](http://via.placeholder.com/350x150)
 
@@ -159,7 +159,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 - consectetur adipisicing elit, sed do eiusmod
 - tempor incididunt ut labore et dolore magna aliqua.
 - Ut enim ad minim veniam
-- quis nostrud exercitation ullamco 
+- quis nostrud exercitation ullamco
 - laboris nisi ut aliquip ex ea commodo
 consequat.
 ```
