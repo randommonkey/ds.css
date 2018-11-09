@@ -1,33 +1,23 @@
-const path = require('path')
-const merge = require('webpack-merge')
-const common = require('./webpack.common')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const common = require('./webpack.common')
+const merge = require('webpack-merge')
+const path = require('path')
 
 module.exports = merge(common, {
+  mode: 'production',
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 2
-              }
-            },
-            'postcss-loader',
-            {
-              loader: 'sass-loader',
-              options: {
-                outputStyle: 'compressed'
-              }
-            }
-          ]
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
       }
     ]
   },
@@ -35,10 +25,15 @@ module.exports = merge(common, {
     new CleanWebpackPlugin('dist', {
       root: path.resolve(__dirname, '..')
     }),
-    new ExtractTextPlugin('ds.min.css'),
-    new UglifyJSPlugin({
-      sourceMap: true
-    })
+    new MiniCssExtractPlugin({ filename: 'titi.min.css' })
   ],
-  devtool: 'source-map'
+  optimization: {
+    minimizer: [
+      new UglifyJSPlugin({
+        cache: true,
+        parallel: true
+      }),
+      new OptimizeCssAssetsPlugin({})
+    ]
+  }
 })

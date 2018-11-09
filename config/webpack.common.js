@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   entry: path.resolve(__dirname, '../src/js/index.js'),
   output: {
-    filename: 'ds.min.js',
+    filename: 'titi.min.js',
     path: path.resolve(__dirname, '../dist')
   },
   module: {
@@ -14,14 +14,13 @@ module.exports = {
         exclude: /(node_modules)/,
         use: 'eslint-loader'
       },
-
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env']
+            presets: ['@babel/env']
           }
         }
       }
