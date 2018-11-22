@@ -12,11 +12,15 @@ header.no-fixed {
 }
 
 nav {
-  font-size: 1.6em;
+  font-size: 1.6rem;
+}
+
+.nav__right > a {
+  display: none;
 }
 
 .nav__right a {
-  margin-left: 7px;
+  margin-left: 10px;
 }
 
 .nav__social-icons {
@@ -28,12 +32,12 @@ nav {
 .burger {
   cursor: pointer;
   display: inline-block;
-  height: 18px;
+  height: 12px;
   margin-right: 10px;
   position: relative;
   transition: all 0.4s ease;
   user-select: none;
-  width: 25px;
+  width: 20px;
 }
 
 .burger-bar {
@@ -49,13 +53,13 @@ nav {
 
 .burger-bar--mid {
   height: 2px;
-  top: 6px;
+  top: 3px;
   width: 100%;
 }
 
 .burger-bar--bottom {
   height: 2px;
-  top: 12px;
+  top: 6px;
   width: 100%;
 }
 
@@ -64,17 +68,17 @@ nav {
 }
 
 .burger.open .burger-bar--top {
-  top: 8px;
+  top: 5px;
   transform: rotate(45deg)
 }
 
 .burger.open .burger-bar--bottom {
   transform: rotate(-45deg);
-  top: 4px;
+  top: 1px;
 }
 
 .burger-menu {
-  font-size: 1.6em;
+  font-size: 1.6rem;
   height: 100vh;
   left: 0;
   overflow: hidden;
@@ -112,4 +116,17 @@ nav {
 
 .burger-menu--item a:hover {
   text-decoration: underline;
+}
+
+.burger-menu--nav-item {
+  display: block;
+}
+
+@include devices(sm, md, lg, xl) {
+  .burger-menu--nav-item {
+    display: none;
+  }
+  .nav__right > a {
+    display: block;
+  }
 }

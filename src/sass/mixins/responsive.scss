@@ -25,3 +25,11 @@
     }
   }
 }
+
+@mixin devices($sizes...) {
+  @each $size in $sizes {
+    @include device($size) {
+      @content;
+    }
+  }
+}
