@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   entry: path.resolve(__dirname, '../src/js/index.js'),
   output: {
-    filename: 'titi.min.js',
+    filename: 'titi.js',
     path: path.resolve(__dirname, '../dist')
   },
   module: {

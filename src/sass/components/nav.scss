@@ -1,49 +1,115 @@
-nav {
-  padding: 5px 0;
-  transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  @include burger(white);
+header {
+  z-index: 10;
 }
-nav.fixed {
-  left: 0;
-  position: fixed;
+
+header.fixed {
+  position: sticky;
+  top: 0;
+}
+
+header.no-fixed {
+  position: static;
+}
+
+nav {
+  font-size: 1.6em;
+}
+
+.nav__right a {
+  margin-left: 7px;
+}
+
+.nav__social-icons {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Burger */
+.burger {
+  cursor: pointer;
+  display: inline-block;
+  height: 18px;
+  margin-right: 10px;
+  position: relative;
+  transition: all 0.4s ease;
+  user-select: none;
+  width: 25px;
+}
+
+.burger-bar {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.burger-bar--top {
+  height: 2px;
   top: 0;
   width: 100%;
 }
-nav.fixed.affixed {
-  background: rgba(0, 0, 0, 0.3);
-}
-nav.static {
+
+.burger-bar--mid {
+  height: 2px;
+  top: 6px;
   width: 100%;
 }
-nav .nav-logo img {
-  filter: brightness(0) invert(1);
-  max-width: 150px;
-}
-nav.active {
-  @include burger(black);
-}
-nav.active .nav-logo img {
-  filter: brightness(0);
+
+.burger-bar--bottom {
+  height: 2px;
+  top: 12px;
+  width: 100%;
 }
 
-.menu {
-  background: rgba(255, 255, 255, 0.9);
+.burger.open .burger-bar--mid {
+  opacity: 0;
+}
+
+.burger.open .burger-bar--top {
+  top: 8px;
+  transform: rotate(45deg)
+}
+
+.burger.open .burger-bar--bottom {
+  transform: rotate(-45deg);
+  top: 4px;
+}
+
+.burger-menu {
+  font-size: 1.6em;
   height: 100vh;
   left: 0;
   overflow: hidden;
   position: absolute;
   top: 0;
-  transition: all 250ms ease-in;
+  transition: all 0.4s ease 0.1s;
   width: 0;
+  z-index: 5;
 }
-.menu.opened {
+
+.burger-menu.open {
+  transition-delay: 0s;
   width: 100%;
 }
-.menu-link {
-  align-self: flex-start;
-  color: black;
-  font-size: 20px;
-  padding: 10px 0 0;
-  position: relative;
-  text-decoration: none;
+
+.burger-menu.open .burger-menu--items {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.burger-menu--items {
+  list-style-type: none;
+  opacity: 0;
+  padding: 0;
+  transition: all 0.2s ease 0s;
+}
+
+.burger-menu--item {
+  padding: 5px 0;
+}
+
+.burger-menu--item a {
+  transition: all 0.25s ease;
+}
+
+.burger-menu--item a:hover {
+  text-decoration: underline;
 }

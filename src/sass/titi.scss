@@ -1,0 +1,10 @@
+@import 'vars';
+
+@import 'mixins/responsive';
+@import 'mixins/align';
+
+@import 'base/base';
+
+@import 'components/align';
+@import 'components/nav';
+@import 'components/footer.scss';

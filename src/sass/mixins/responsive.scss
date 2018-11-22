@@ -1,21 +1,26 @@
-@mixin device-size($size) {
-  @if $size == phone {
-    @media only screen and (max-width: $sm-viewport - 1) {
+@mixin device($size) {
+  @if $size == xs {
+    @media only screen and (min-width: $xs) and (max-width: $sm - 1) {
       @content;
     }
   }
-  @else if $size == small {
-    @media only screen and (min-width: $sm-viewport) and (max-width: $md-viewport - 1) {
+  @else if $size == sm {
+    @media only screen and (min-width: $sm) and (max-width: $md - 1) {
       @content;
     }
   }
-  @else if $size == medium {
-    @media only screen and (min-width: $md-viewport) and (max-width: $lg-viewport - 1) {
+  @else if $size == md {
+    @media only screen and (min-width: $md) and (max-width: $lg - 1) {
       @content;
     }
   }
-  @else if $size == large {
-    @media only screen and (min-width: $lg-viewport) {
+  @else if $size == lg {
+    @media only screen and (min-width: $lg) and (max-width: $xl - 1) {
+      @content;
+    }
+  }
+  @else if $size == xl {
+    @media only screen and (min-width: $xl) {
       @content;
     }
   }

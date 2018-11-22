@@ -25,7 +25,7 @@ module.exports = merge(common, {
     new CleanWebpackPlugin('dist', {
       root: path.resolve(__dirname, '..')
     }),
-    new MiniCssExtractPlugin({ filename: 'titi.min.css' })
+    new MiniCssExtractPlugin({ filename: 'titi.css' })
   ],
   optimization: {
     minimizer: [

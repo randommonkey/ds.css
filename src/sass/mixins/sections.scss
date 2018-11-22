@@ -1,9 +1,0 @@
-@mixin section($height) {
-  min-height: $height;
-}
-
-@mixin section-fixed($height) {
-  height: $height;
-  max-height: $height;
-  overflow: auto;
-}

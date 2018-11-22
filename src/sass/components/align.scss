@@ -39,4 +39,4 @@
 .item-end     { @include align-self(flex-end);}
 
 // Flex
-.fill { @include flex(1, 0, auto); }
+.item-fill { @include flex(1, 0, auto); }
