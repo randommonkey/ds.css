@@ -1,0 +1,9 @@
+.only-mobile {
+  display: block;
+}
+
+@include devices(sm, md, lg, xl) {
+  .only-mobile {
+    display: none;
+  }
+}

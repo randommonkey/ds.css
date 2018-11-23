@@ -4,6 +4,10 @@
   width: 95%;
 }
 
+.post__cover {
+  height: 50vh;
+}
+
 .post__title {
   font-size: 4rem;
   font-weight: normal;
@@ -14,6 +18,10 @@
   font-size: 1.8rem;
   font-weight: lighter;
   font-weight: 300;
+}
+
+.post__body a {
+  text-decoration: underline;
 }
 
 .post__body p {
@@ -29,6 +37,17 @@
 
 .post__body img {
   max-width: 100%;
+}
+
+.post__body blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 0 1.5rem 20px;
+  padding: 1rem;
+}
+
+.post__body blockquote p {
+  margin: 0;
 }
 
 @include device(sm) {

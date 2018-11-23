@@ -24,11 +24,10 @@ a {
   text-decoration: none;
 }
 
-#wrapper {
-  min-height: 100%;
-  position: relative;
-  @include flexbox(column);
-  @include flex-wrap(nowrap);
+.background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -42,4 +41,11 @@ a {
 
 .text-right {
   text-align: right;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+  @include flexbox(column);
+  @include flex-wrap(nowrap);
 }
