@@ -1,0 +1,26 @@
+.iframe__container {
+  height: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.iframe__container.resized {
+  height: auto;
+  padding-bottom: 0 !important;
+  position: static;
+}
+
+.iframe__container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.iframe__container.resized iframe {
+  position: relative !important;
+}
