@@ -16,7 +16,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
