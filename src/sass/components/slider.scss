@@ -2,3 +2,20 @@
   height: 75vh;
   width: 100%;
 }
+
+.slide {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slide__title {
+  font-size: 2.5rem;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.slide__text {
+  text-align: center;
+  font-size: 1.5rem;
+}
