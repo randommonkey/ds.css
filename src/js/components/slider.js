@@ -50,6 +50,38 @@ const enableAutoplay = (slider, options) => {
     }
 }
 
+const setGapBetweenSlides = (slider, options) => {
+  return !hasAttribute(slider, 'data-gap')
+    ? options
+    : {
+      ...options,
+      spaceBetween: Number.parseInt(slider.getAttribute('data-gap')) || 0
+    }
+}
+
+const setSlidesPerView = (slider, options) => {
+  const slidesOnPc = Number.parseInt(slider.getAttribute('data-pc')) || 1
+  const slidesOnTablet = Number.parseInt(slider.getAttribute('data-tablet')) || slidesOnPc
+  const slidesOnMobile = Number.parseInt(slider.getAttribute('data-mobile')) || slidesOnTablet
+  return {
+    ...options,
+    slidesPerView: slidesOnPc,
+    slidesPerGroup: slidesOnPc,
+    breakpoints: {
+      // Selected from sass/vars.scss as breakpoint for mobile
+      600: {
+        slidesPerView: slidesOnMobile,
+        slidesPerGroup: slidesOnMobile
+      },
+      // Selected from sass/vars.scss as breakpoint for tablets
+      960: {
+        slidesPerView: slidesOnTablet,
+        slidesPerGroup: slidesOnTablet
+      }
+    }
+  }
+}
+
 if (sliders) {
   for (const slider of sliders) {
     let options = { grabCursor: true, preloadImages: false, lazy: true }
@@ -57,6 +89,8 @@ if (sliders) {
     options = enableNavigation(slider, options)
     options = enableLoop(slider, options)
     options = enableAutoplay(slider, options)
+    options = setGapBetweenSlides(slider, options)
+    options = setSlidesPerView(slider, options)
     new Swiper(slider, options) /* eslint no-new: off */
   }
 }
