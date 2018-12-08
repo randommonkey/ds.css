@@ -1,4 +1,5 @@
 import Swiper from 'swiper'
+import { breakpoints } from '../utils'
 
 const sliders = [...document.querySelectorAll('.slider')]
 
@@ -69,12 +70,12 @@ const setSlidesPerView = (slider, options) => {
     slidesPerGroup: slidesOnPc,
     breakpoints: {
       // Selected from sass/vars.scss as breakpoint for mobile
-      600: {
+      [breakpoints.sm]: {
         slidesPerView: slidesOnMobile,
         slidesPerGroup: slidesOnMobile
       },
       // Selected from sass/vars.scss as breakpoint for tablets
-      960: {
+      [breakpoints.md]: {
         slidesPerView: slidesOnTablet,
         slidesPerGroup: slidesOnTablet
       }

@@ -1,21 +1,21 @@
 @mixin device($size) {
   @if $size == xs {
-    @media only screen and (min-width: $xs) and (max-width: $sm - 1) {
+    @media only screen and (min-width: $xs) {
       @content;
     }
   }
   @else if $size == sm {
-    @media only screen and (min-width: $sm) and (max-width: $md - 1) {
+    @media only screen and (min-width: $sm) {
       @content;
     }
   }
   @else if $size == md {
-    @media only screen and (min-width: $md) and (max-width: $lg - 1) {
+    @media only screen and (min-width: $md) {
       @content;
     }
   }
   @else if $size == lg {
-    @media only screen and (min-width: $lg) and (max-width: $xl - 1) {
+    @media only screen and (min-width: $lg) {
       @content;
     }
   }
