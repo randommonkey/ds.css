@@ -79,7 +79,7 @@
     width: 75%;
   }
   .post-list-item {
-    grid-template-columns: 300px 0.8fr;
+    grid-template-columns: 300px 1fr;
     grid-template-rows: 1fr;
     justify-content: center;
   }
@@ -90,7 +90,7 @@
     width: 65%;
   }
   .post-list-item {
-    grid-template-columns: 320px 0.7fr;
+    grid-template-columns: 320px 1fr;
   }
 }
 

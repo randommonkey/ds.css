@@ -23,6 +23,7 @@
 .justify-end      { @include justify-content(flex-end); }
 .justify-evenly   { @include justify-content(space-evenly); }
 .justify-start    { @include justify-content(flex-start); }
+.justify-center   { @include justify-content(center); }
 
 // Align items
 .align-start  { @include align-items(flex-start); }
