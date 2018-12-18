@@ -34,6 +34,7 @@ img {
 }
 
 .container,
+.container_md,
 .container_sm {
   margin: 0 auto;
   width: 95%;
@@ -55,18 +56,27 @@ img {
 }
 
 @include device(sm) {
+  .container_md {
+    width: 85%;
+  }
   .container_sm {
     width: 75%;
   }
 }
 
 @include device(md) {
+  .container_md {
+    width: 75%;
+  }
   .container_sm {
     width: 65%;
   }
 }
 
 @include device(lg) {
+  .container_md {
+    width: 65%;
+  }
   .container_sm {
     width: 50%;
   }
