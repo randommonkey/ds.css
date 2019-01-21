@@ -43,6 +43,7 @@
   "dependencies": {
     "deep-extend": ">=0.5.1",
     "deepmerge": "^2.1.0",
+    "highlight.js": "^9.13.1",
     "hoek": "^5.0.3",
     "iframe-resizer": "^3.6.3",
     "swiper": "^4.4.2",

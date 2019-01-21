@@ -27,6 +27,11 @@ img {
   max-width: 100%;
 }
 
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 .background {
   background-position: center;
   background-repeat: no-repeat;
@@ -70,6 +75,9 @@ img {
   }
   .container_sm {
     width: 65%;
+  }
+  pre {
+    white-space: pre;
   }
 }
 
